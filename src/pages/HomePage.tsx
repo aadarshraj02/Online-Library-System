@@ -8,14 +8,39 @@ const HomePage = (): JSX.Element => {
     return "Good Evening,";
   };
 
+  const categories = [
+    "Fiction",
+    "Non-Fiction",
+    "Sci-Fi",
+    "Romance",
+    "Mystery",
+    "Self-help",
+    "True-Crime",
+  ];
+
   return (
-    <div className="bg-[url('/Background-image.jpeg')] min-h-screen relative bg-cover bg-center">
+    <div className="bg-[url('/Background-image.jpeg')] min-h-screen relative bg-cover bg-center w-full">
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="z-50 relative p-2">
         <div>
           <h1 className="text-center text-zinc-100  text-xl sm:text-2xl md:text-3xl font-semibold">
             {greeting()} Welcome to Online Library!
           </h1>
+        </div>
+        <div className="mt-8">
+          <h2 className="text-zinc-300 text-lg sm:text-xl md:text-2xl font-semibold mb-4 text-center">
+            Book Categories
+          </h2>
+          <div className="flex justify-center flex-wrap gap-4">
+            {categories.map((category, index) => (
+              <div
+                key={index}
+                className="bg-white bg-opacity-40 backdrop-blur-sm p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 cursor-pointer flex items-center justify-center text-center text-zinc-800 font-semibold"
+              >
+                {category}
+              </div>
+            ))}
+          </div>
         </div>
         <BookCard />
       </div>
