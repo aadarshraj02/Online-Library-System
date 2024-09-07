@@ -1,3 +1,4 @@
+import { books } from "../utils/BookData";
 import BookCard from "../components/BookCard";
 
 const HomePage = (): JSX.Element => {
@@ -17,6 +18,8 @@ const HomePage = (): JSX.Element => {
     "Self-help",
     "True-Crime",
   ];
+
+  const popularBooks = books.slice(0, 6);
 
   return (
     <div className="bg-[url('/Background-image.jpeg')] relative bg-cover bg-center w-full min-h-[82vh]">
@@ -42,12 +45,21 @@ const HomePage = (): JSX.Element => {
             ))}
           </div>
         </div>
-        <div className="px-4 py-2">
-          <h1 className="text-2xl text-zinc-300 font-semibold px-2">
-            Popular Books
-          </h1>
-          <div>
-            <BookCard />
+        <div className="px-4 py-2 flex justify-center">
+          <div className="w-full max-w-7xl">
+            <h1 className="text-2xl text-zinc-300 font-semibold px-2 text-center">
+              Popular Books
+            </h1>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 flex-wrap">
+              {popularBooks.map((book) => (
+                <BookCard
+                  key={book.id}
+                  title={book.title}
+                  image={book.image}
+                  id={book.id}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
