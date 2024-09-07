@@ -33,7 +33,8 @@ const BrowseBooks = (): JSX.Element => {
   }, [category]);
 
   return (
-    <div className="p-4 flex flex-col items-center bg-[url('/Browsebook.jpg')]">
+    <div className="p-4 flex flex-col items-center bg-[url('/Browsebook.jpg')] relative min-h-[82vh]">
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="w-full max-w-7xl">
         <h1 className="text-2xl font-semibold mb-4 text-center text-zinc-300">
           Browse Books
