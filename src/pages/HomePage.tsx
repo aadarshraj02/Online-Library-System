@@ -1,3 +1,5 @@
+import BookCard from "../components/BookCard";
+
 const HomePage = (): JSX.Element => {
   const greeting = (): string => {
     const currHour = new Date().getHours();
@@ -15,6 +17,7 @@ const HomePage = (): JSX.Element => {
             {greeting()} Welcome to Online Library!
           </h1>
         </div>
+        <BookCard />
       </div>
     </div>
   );
