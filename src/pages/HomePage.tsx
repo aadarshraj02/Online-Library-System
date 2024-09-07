@@ -1,5 +1,6 @@
 import { books } from "../utils/BookData";
 import BookCard from "../components/BookCard";
+import { Link } from "react-router-dom";
 
 const HomePage = (): JSX.Element => {
   const greeting = (): string => {
@@ -36,12 +37,13 @@ const HomePage = (): JSX.Element => {
           </h2>
           <div className="flex justify-center flex-wrap gap-4">
             {categories.map((category, index) => (
-              <div
+              <Link
+                to={`/books/${category}`}
                 key={index}
                 className="bg-white bg-opacity-40 backdrop-blur-sm p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 cursor-pointer flex items-center justify-center text-center text-zinc-800 font-semibold"
               >
                 {category}
-              </div>
+              </Link>
             ))}
           </div>
         </div>
