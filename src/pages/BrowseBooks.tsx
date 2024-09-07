@@ -44,7 +44,7 @@ const BrowseBooks = (): JSX.Element => {
         <div className="flex items-center justify-center relative z-10">
           <input
             type="text"
-            className="w-[80vw] sm:w-[60vw] md:[50vw] lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3"
+            className="w-[80vw] sm:w-[60vw] md:[50vw] lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-800"
             placeholder="Search Books here..."
             onChange={(e) => setSearchedText(e.target.value)}
             value={searchedText}
