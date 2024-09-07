@@ -40,7 +40,7 @@ const HomePage = (): JSX.Element => {
               <Link
                 to={`/books/${category}`}
                 key={index}
-                className="bg-white bg-opacity-40 backdrop-blur-sm p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 cursor-pointer flex items-center justify-center text-center text-zinc-800 font-semibold"
+                className="bg-white bg-opacity-40 backdrop-blur-sm p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-linear hover:scale-110 cursor-pointer flex items-center justify-center text-center text-zinc-800 font-semibold"
               >
                 {category}
               </Link>
