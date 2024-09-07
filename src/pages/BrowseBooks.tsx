@@ -18,6 +18,7 @@ const BrowseBooks = (): JSX.Element => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const params = useParams<{ category: string }>();
   const category = params.category;
+  const [searchedText, setSearchedText] = useState<string>("");
 
   const filteredBooks =
     selectedCategory === "All"
@@ -32,6 +33,10 @@ const BrowseBooks = (): JSX.Element => {
     }
   }, [category]);
 
+  const searchedBooks = filteredBooks.filter((book) =>
+    book.title.toLowerCase().includes(searchedText.toLowerCase())
+  );
+
   return (
     <div className="p-4 flex flex-col items-center bg-[url('/Browsebook.jpg')] relative min-h-[82vh]">
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -41,6 +46,8 @@ const BrowseBooks = (): JSX.Element => {
             type="text"
             className="w-[80vw] sm:w-[60vw] md:[50vw] lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3"
             placeholder="Search Books here..."
+            onChange={(e) => setSearchedText(e.target.value)}
+            value={searchedText}
           />
         </div>
         <h1 className="text-2xl font-semibold mb-4 text-center text-zinc-100">
@@ -61,7 +68,7 @@ const BrowseBooks = (): JSX.Element => {
           ))}
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 flex-wrap">
-          {filteredBooks.map((book) => (
+          {searchedBooks.map((book) => (
             <BookCard
               key={book.id}
               title={book.title}
