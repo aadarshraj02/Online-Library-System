@@ -1,7 +1,9 @@
+import { useState } from "react";
 import BookCard from "../components/BookCard";
 import { books } from "../utils/BookData";
 
 const categories = [
+  "All",
   "Fiction",
   "Non-Fiction",
   "Sci-Fi",
@@ -12,24 +14,34 @@ const categories = [
 ];
 
 const BrowseBooks = (): JSX.Element => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const filteredBooks =
+    selectedCategory === "All"
+      ? books
+      : books.filter((book) => book.category === selectedCategory);
+
   return (
-    <div className="p-4 flex justify-center bg-[url('/Browsebook.jpg')]">
+    <div className="p-4 flex flex-col items-center bg-[url('/Browsebook.jpg')]">
       <div className="w-full max-w-7xl">
         <h1 className="text-2xl font-semibold mb-4 text-center text-zinc-300">
           Browse Books
         </h1>
-        <div className="flex justify-center flex-wrap gap-4">
+        <div className="flex justify-center flex-wrap gap-4 mb-8">
           {categories.map((category, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-40 backdrop-blur-sm p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 cursor-pointer flex items-center justify-center text-center text-zinc-800 font-semibold mb-4"
+              onClick={() => setSelectedCategory(category)}
+              className={`bg-white bg-opacity-40 backdrop-blur-sm p-4 rounded-lg shadow-md hover:scale-110 transition-all duration-200 ease-linear cursor-pointer flex items-center justify-center text-center text-zinc-800 font-semibold mb-4 ${
+                selectedCategory === category ? "bg-opacity-80" : ""
+              }`}
             >
               {category}
             </div>
           ))}
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 flex-wrap">
-          {books.map((book) => (
+          {filteredBooks.map((book) => (
             <BookCard
               key={book.id}
               title={book.title}
