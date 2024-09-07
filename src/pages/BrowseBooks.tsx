@@ -3,7 +3,7 @@ import { books } from "../utils/BookData";
 
 const BrowseBooks = (): JSX.Element => {
   return (
-    <div className="p-4 flex justify-center">
+    <div className="p-4 flex justify-center bg-[url('/Browsebook.jpg')]">
       <div className="w-full max-w-7xl">
         <h1 className="text-2xl font-semibold mb-4 text-center">
           Browse Books
