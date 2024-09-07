@@ -1,4 +1,5 @@
 import BookCard from "../components/BookCard";
+import { books } from "../utils/BookData";
 
 const BrowseBooks = (): JSX.Element => {
   return (
