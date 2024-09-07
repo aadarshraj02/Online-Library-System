@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BookCard from "../components/BookCard";
 import { books } from "../utils/BookData";
+import { useParams } from "react-router-dom";
 
 const categories = [
   "All",
@@ -15,11 +16,21 @@ const categories = [
 
 const BrowseBooks = (): JSX.Element => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const params = useParams<{ category: string }>();
+  const category = params.category;
 
   const filteredBooks =
     selectedCategory === "All"
       ? books
       : books.filter((book) => book.category === selectedCategory);
+
+  useEffect(() => {
+    if (category) {
+      setSelectedCategory(category);
+    } else {
+      setSelectedCategory("All");
+    }
+  }, [category]);
 
   return (
     <div className="p-4 flex flex-col items-center bg-[url('/Browsebook.jpg')]">
