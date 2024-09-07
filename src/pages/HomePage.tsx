@@ -19,7 +19,7 @@ const HomePage = (): JSX.Element => {
   ];
 
   return (
-    <div className="bg-[url('/Background-image.jpeg')] relative bg-cover bg-center w-full">
+    <div className="bg-[url('/Background-image.jpeg')] relative bg-cover bg-center w-full min-h-[82vh]">
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="z-50 relative p-2">
         <div>
@@ -42,7 +42,7 @@ const HomePage = (): JSX.Element => {
             ))}
           </div>
         </div>
-        <div className="p-4">
+        <div className="px-4 py-2">
           <h1 className="text-2xl text-zinc-300 font-semibold px-2">
             Popular Books
           </h1>
