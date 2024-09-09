@@ -14,7 +14,7 @@ const App = (): JSX.Element => {
           <Route path="/" element={<HomePage />} />
           <Route path="/books" element={<BrowseBooks />} />
           <Route path="/books/:category" element={<BrowseBooks />} />
-          <Route path="/books/:category/:id" element={<BookDetails />} />
+          <Route path="/book/:id" element={<BookDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>
