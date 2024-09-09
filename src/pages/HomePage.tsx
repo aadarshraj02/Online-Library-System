@@ -20,7 +20,7 @@ const HomePage = (): JSX.Element => {
     "True-Crime",
   ];
 
-  const popularBooks = books.slice(0, 6);
+  const popularBooks = books.slice(0, 8);
 
   return (
     <div className="bg-[url('/Background-image.jpeg')] relative bg-cover bg-center w-full min-h-[82vh]">
