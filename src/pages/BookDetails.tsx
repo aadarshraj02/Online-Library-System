@@ -14,7 +14,7 @@ const BookDetails = (): JSX.Element => {
             {book?.title}
           </h1>
         </div>
-        <div className="mt-2 flex flex-col lg:flex-row w-full">
+        <div className="mt-2 flex flex-col lg:flex-row w-full items-center lg:items-start">
           <div className="lg:w-1/4 mr-4">
             <img className="h-[50vh] rounded-lg" src={book?.image} alt="" />
           </div>
@@ -39,7 +39,7 @@ const BookDetails = (): JSX.Element => {
               <IoStar className="text-yellow-500" />
               <p className="text-zinc-700"> {book?.rating}</p>
             </div>
-            <div className="mt-1 flex items-center justify-around">
+            <div className="mt-1 flex flex-col sm:flex-row sm:items-center sm:justify-around">
               <p className="text-sm text-zinc-700">
                 <span className="text-black font-semibold">No. of Pages: </span>
                 {book?.pages}
