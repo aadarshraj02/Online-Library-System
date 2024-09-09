@@ -20,7 +20,11 @@ const HomePage = (): JSX.Element => {
     "True-Crime",
   ];
 
-  const popularBooks = books.slice(0, 8);
+  const getPopularBooks = (arr: typeof books) => {
+    return arr.filter((book) => book.id % 2 === 0).slice(0, 8);
+  };
+
+  const popularBooks = getPopularBooks(books);
 
   return (
     <div className="bg-[url('/Background-image.jpeg')] relative bg-cover bg-center w-full min-h-[82vh]">
