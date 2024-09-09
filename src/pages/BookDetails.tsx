@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { books } from "../utils/BookData";
 import { IoStar } from "react-icons/io5";
 
@@ -48,6 +48,13 @@ const BookDetails = (): JSX.Element => {
                 <span className="text-black font-semibold">Category: </span>
                 {book?.category}
               </p>
+            </div>
+            <div className="mt-8 flex items-center justify-center">
+              <Link to="/books">
+                <button className="bg-green-600 px-4 py-1 rounded-md text-white hover:bg-green-700 transition-all">
+                  Back to Browse
+                </button>
+              </Link>
             </div>
           </div>
         </div>
