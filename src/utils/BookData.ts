@@ -56,7 +56,7 @@ export const books = [
   },
   {
     id: 6,
-    title: "T Good Vibes, Good Life: How Self-Love Is",
+    title: "Good Vibes, Good Life: How Self-Love Is",
     image: "https://www.crossword.in/cdn/shop/products/9789386832832_360x.jpg?v=1680197060",
     description : "A beautifully designed book full of inspiring quotes and tried-and-tested wisdom on using positivity to create a life you love. How can you learn to truly love yourself. How can you transform negative emotions into positive ones. Is it possible to find lasting happiness. In this book, Instagram guru Vex King answers all of these questions and more. Vex overcame adversity to become a source of hope for thousands of young people and now draws from his personal experience and his intuitive wisdom to inspire you",
     author: "	Vex King",
@@ -155,7 +155,7 @@ export const books = [
   },
   {
     id: 15,
-    title: " The Fifth Mountain",
+    title: "The Fifth Mountain",
     image: "https://www.crossword.in/cdn/shop/products/71YQZvQnobL_360x.jpg?v=1685185835",
     description : "The Alchemist by Paulo Coelho is a philosophical novel about Santiago, a young shepherd who embarks on a journey to find a hidden treasure in the Egyptian pyramids. Along the way, he meets various people who guide him toward self-discovery and understanding the importance of pursuing one's dreams. The novel explores themes of destiny, personal legends, and the interconnectedness of all things. Through Santiago's journey, Coelho conveys that the true treasure lies in the wisdom gained through experience and following one's heart.",
     author: "Paulo Coelho",
@@ -166,7 +166,7 @@ export const books = [
   },
   {
     id: 16,
-    title: " Whispering Shadows",
+    title: "Whispering Shadows",
     image: "https://www.crossword.in/cdn/shop/files/81iupGKhuzL._SL1500_360x.jpg?v=1719314591",
     description : "The Alchemist by Paulo Coelho is a philosophical novel about Santiago, a young shepherd who embarks on a journey to find a hidden treasure in the Egyptian pyramids. Along the way, he meets various people who guide him toward self-discovery and understanding the importance of pursuing one's dreams. The novel explores themes of destiny, personal legends, and the interconnectedness of all things. Through Santiago's journey, Coelho conveys that the true treasure lies in the wisdom gained through experience and following one's heart.",
     author: "Paulo Coelho",
@@ -232,7 +232,7 @@ export const books = [
   },
   {
     id: 22,
-    title: " The Mystery Omnibust",
+    title: "The Mystery Omnibust",
     image: "https://www.crossword.in/cdn/shop/files/71JBkFQz5TL._SL1500_360x.jpg?v=1698220847",
     description : "The Alchemist by Paulo Coelho is a philosophical novel about Santiago, a young shepherd who embarks on a journey to find a hidden treasure in the Egyptian pyramids. Along the way, he meets various people who guide him toward self-discovery and understanding the importance of pursuing one's dreams. The novel explores themes of destiny, personal legends, and the interconnectedness of all things. Through Santiago's journey, Coelho conveys that the true treasure lies in the wisdom gained through experience and following one's heart.",
     author: "Paulo Coelho",
