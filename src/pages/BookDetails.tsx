@@ -15,37 +15,37 @@ const BookDetails = (): JSX.Element => {
           </h1>
         </div>
         <div className="mt-2 flex flex-col lg:flex-row w-full">
-          <div className="lg:w-1/4">
+          <div className="lg:w-1/4 mr-4">
             <img className="h-[50vh] rounded-lg" src={book?.image} alt="" />
           </div>
           <div className="lg:w-2/3">
-            <h3>
+            <h3 className="text-zinc-700 text-lg">
               {" "}
-              <span>Author: </span>
+              <span className="text-black font-semibold">Author: </span>
               {book?.author}
             </h3>
-            <p className="text-justify">
-              <span>Description: </span>
+            <p className="text-justify text-sm leading-2 text-zinc-700">
+              <span className="text-black font-semibold">Description: </span>
               {book?.description}
             </p>
-            <p>
-              <span>Release Year: </span>
+            <p className="text-sm mt-4 text-zinc-700">
+              <span className="text-black font-semibold">Release Year: </span>
               {book?.releaseYear}
             </p>
-            <div>
-              <p>
-                <span>Rating: </span>
-                <IoStar />
-                {book?.rating}
-              </p>
+            <div className="flex items-center gap-2 text-sm mt-1">
+              <div>
+                <span className="text-black font-semibold">Rating: </span>
+              </div>
+              <IoStar className="text-yellow-500" />
+              <p className="text-zinc-700"> {book?.rating}</p>
             </div>
-            <div>
-              <p>
-                <span>No. of Pages: </span>
+            <div className="mt-1 flex items-center justify-around">
+              <p className="text-sm text-zinc-700">
+                <span className="text-black font-semibold">No. of Pages: </span>
                 {book?.pages}
               </p>
-              <p>
-                <span>Category: </span>
+              <p className="text-sm text-zinc-700">
+                <span className="text-black font-semibold">Category: </span>
                 {book?.category}
               </p>
             </div>
