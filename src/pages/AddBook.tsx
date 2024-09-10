@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { addBook } from "../redux/slices/booksSlice";
+import { useNavigate } from "react-router-dom";
 
 const validation = Yup.object({
   title: Yup.string().required("Title is required"),
@@ -26,9 +27,11 @@ const validation = Yup.object({
 
 const AddBook = (): JSX.Element => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (values: any) => {
     dispatch(addBook(values));
+    navigate("/books");
   };
   return (
     <div className="bg-[url('/bgimg.jpg')] min-h-[82vh] bg-cover bg-center relative w-full items-center flex justify-center">
