@@ -1,4 +1,6 @@
-export const books = [
+import { Book } from '../types/types';
+
+export const books:Book[] = [
   {
     id: 1,
     title: "The Alchemist",
