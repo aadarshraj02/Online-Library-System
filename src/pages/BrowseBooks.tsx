@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import BookCard from "../components/BookCard";
-import { books } from "../utils/BookData";
 import { Link, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const categories = [
   "All",
@@ -19,6 +20,8 @@ const BrowseBooks = (): JSX.Element => {
   const params = useParams<{ category: string }>();
   const category = params.category;
   const [searchedText, setSearchedText] = useState<string>("");
+
+  const books = useSelector((state: RootState) => state.books.books);
 
   const filteredBooks =
     selectedCategory === "All"
