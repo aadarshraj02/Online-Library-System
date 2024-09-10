@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Book } from '../../types/types';
+import { books as initialBooks } from '../../utils/BookData';
 
 interface BooksState {
   books: Book[];
 }
 
 const initialState: BooksState = {
-  books: JSON.parse(sessionStorage.getItem('books') || '[]') || [],
+  books: JSON.parse(sessionStorage.getItem('books') || '[]') && initialBooks,
 };
 
 const booksSlice = createSlice({
