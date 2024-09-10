@@ -1,10 +1,13 @@
 import { Link, useParams } from "react-router-dom";
-import { books } from "../utils/BookData";
 import { IoStar } from "react-icons/io5";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const BookDetails = (): JSX.Element => {
-  const { id } = useParams<{ id: any }>();
-  const book = books.find((b) => b.id == id);
+  const { id } = useParams<{ id: string }>();
+  const books = useSelector((state: RootState) => state.books.books);
+  const book = books.find((b) => b.id === Number(id));
+
   return (
     <div className="bg-[url('/bookDetails.jpeg')] min-h-[82vh] bg-cover relative flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -20,7 +23,6 @@ const BookDetails = (): JSX.Element => {
           </div>
           <div className="lg:w-2/3">
             <h3 className="text-zinc-700 text-lg">
-              {" "}
               <span className="text-black font-semibold">Author: </span>
               {book?.author}
             </h3>
