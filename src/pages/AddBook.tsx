@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { addBook } from "../redux/slices/booksSlice";
@@ -34,7 +34,9 @@ const AddBook = (): JSX.Element => {
     <div className="bg-[url('/bgimg.jpg')] min-h-[82vh] bg-cover bg-center relative w-full items-center flex justify-center">
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative z-10 bg-white bg-opacity-50 backdrop-blur-sm p-4 rounded-lg w-2/4">
-        <h1 className="text-center text-2xl text-zinc-100">Add a New Book</h1>
+        <h1 className="text-center text-3xl text-zinc-100 font-bold">
+          Add a New Book
+        </h1>
         <div>
           <Formik
             initialValues={{
@@ -49,7 +51,129 @@ const AddBook = (): JSX.Element => {
             }}
             validation={validation}
             onSubmit={handleSubmit}
-          ></Formik>
+          >
+            {() => (
+              <Form>
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+                  <label htmlFor="title" className="text-lg font-semibold">
+                    Title:
+                  </label>
+                  <Field
+                    type="text"
+                    id="title"
+                    name="title"
+                    className="lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-700"
+                  />
+                  <ErrorMessage name="title" component="div" />
+                </div>
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+                  <label htmlFor="author" className="text-lg font-semibold">
+                    Author:
+                  </label>
+                  <Field
+                    type="text"
+                    id="author"
+                    name="author"
+                    className="lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-700"
+                  />
+                  <ErrorMessage name="author" component="div" />
+                </div>
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+                  <label htmlFor="image" className="text-lg font-semibold">
+                    Image Url:
+                  </label>
+                  <Field
+                    type="text"
+                    id="image"
+                    name="image"
+                    className="lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-700"
+                  />
+                  <ErrorMessage name="image" component="div" />
+                </div>
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+                  <label
+                    htmlFor="description"
+                    className="text-lg font-semibold"
+                  >
+                    Description:
+                  </label>
+                  <Field
+                    as="textarea"
+                    id="description"
+                    name="description"
+                    className="lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-700"
+                  />
+                  <ErrorMessage name="description" component="div" />
+                </div>
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+                  <label
+                    htmlFor="releaseYear"
+                    className="text-lg font-semibold"
+                  >
+                    Release Year:
+                  </label>
+                  <Field
+                    type="text"
+                    id="releaseYear"
+                    name="releaseYear"
+                    className="lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-700"
+                  />
+                  <ErrorMessage name="releaseYear" component="div" />
+                </div>
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+                  <label htmlFor="rating" className="text-lg font-semibold">
+                    Rating:
+                  </label>
+                  <Field
+                    type="number"
+                    id="rating"
+                    name="rating"
+                    className="lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-700"
+                  />
+                  <ErrorMessage name="rating" component="div" />
+                </div>
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+                  <label htmlFor="pages" className="text-lg font-semibold">
+                    Page Numbers:
+                  </label>
+                  <Field
+                    type="number"
+                    id="pages"
+                    name="pages"
+                    className="lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-700"
+                  />
+                  <ErrorMessage name="pages" component="div" />
+                </div>
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+                  <label htmlFor="category" className="text-lg font-semibold">
+                    Category
+                  </label>
+                  <Field
+                    as="select"
+                    id="category"
+                    name="category"
+                    className="lg:w-[40vw] xl:w-[30vw] outline-none px-3 py-1 rounded-md text-lg my-3 bg-white bg-opacity-40 backdrop-blur-sm text-zinc-700"
+                  >
+                    <option value="">Select a category</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Self-help">Self-help</option>
+                    <option value="True-Crime">True-Crime</option>
+                  </Field>
+                  <ErrorMessage name="category" component="div" />
+                </div>
+                <button
+                  type="submit"
+                  className="bg-green-600 px-4 py-1 rounded-md text-white hover:bg-green-700 transition-all w-full"
+                >
+                  Add Book
+                </button>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
     </div>
