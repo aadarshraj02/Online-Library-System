@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  # Online Library 📝  
 
-Currently, two official plugins are available:
+A simple online Library system where you can browse books according to different categories search books add new books and get details of the books.
+   
+  ## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  https://online-library-system-nine.vercel.app/
 
-## Expanding the ESLint configuration
+  ## Github Link
+  
+  https://github.com/aadarshraj02/Online-Library-System
+  
+## Run Locally  
+Clone the project  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+~~~bash  
+  git clone https://github.com/aadarshraj02/Online-Library-System
+~~~
 
-- Configure the top-level `parserOptions` property like this:
+Go to the project directory  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+~~~bash  
+  cd online-library-system
+~~~
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Install dependencies  
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+~~~bash  
+npm install
+~~~
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Start the server  
+
+~~~bash  
+npm run dev
+~~~  
+Open the Application:
+
+Open your browser and navigate to http://localhost:5173 to view the application.
+
+## Features
+
+- Add books: Add a new book to the list according to category.
+- Search Books: Search books with title
+- Get Details: Get details of any specific book like author,description, rating etc.
