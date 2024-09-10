@@ -1,4 +1,7 @@
+import { Formik } from "formik";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
+import { addBook } from "../redux/slices/booksSlice";
 
 const validation = Yup.object({
   title: Yup.string().required("Title is required"),
@@ -22,11 +25,32 @@ const validation = Yup.object({
 });
 
 const AddBook = (): JSX.Element => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values: any) => {
+    dispatch(addBook(values));
+  };
   return (
     <div className="bg-[url('/bgimg.jpg')] min-h-[82vh] bg-cover bg-center relative w-full items-center flex justify-center">
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative z-10 bg-white bg-opacity-50 backdrop-blur-sm p-4 rounded-lg w-2/4">
         <h1 className="text-center text-2xl text-zinc-100">Add a New Book</h1>
+        <div>
+          <Formik
+            initialValues={{
+              title: "",
+              author: "",
+              image: "",
+              description: "",
+              releaseYear: "",
+              rating: "",
+              pages: "",
+              category: "",
+            }}
+            validation={validation}
+            onSubmit={handleSubmit}
+          ></Formik>
+        </div>
       </div>
     </div>
   );
